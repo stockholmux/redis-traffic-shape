@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Redis WebSocket Traffic Shaper</h1>
+      
+      <div class="row">
+        <div class="col">
+          <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Resource</th>
+                <th>Status</th>
+                <th>Round Trip</th>
+                <th>Finish</th>
+                <th>Phase</th>
+              </tr>
+            </thead>
+            <tbody id="traffic">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+      <button id="start" class="btn btn-primary">Play</button>
+      <button id="reset" class="btn btn-warning">Reset</button>
+      <button id="trafficOneDest" class="btn btn-info">Traffic -> 1 dest</button>
+      <button id="trafficAllDest" class="btn btn-info">Traffic -> All dest</button>
+      <button id="trafficMixedDest" class="btn btn-info">Traffic -> Mixed dest</button>
+
+      <div class="row">
+        <div class="col phase" id="phase1">
+          <div class="lead text-center">Burst Phase 1 (500ms)</div>
+          
+          <div id="phase1add" class="text-center">
+            <button class="btn btn-danger" action-id="1">1</button>
+            <button class="btn btn-danger" action-id="2">2</button>
+            <button class="btn btn-danger" action-id="3">3</button>
+          </div>
+
+          <div id="phase1actions" class="actions"></div>
+        </div>
+        <div class="col phase" id="phase2">
+          <div class="lead text-center">Burst Phase 2 (1000ms)</div>
+          
+          <div id="phase2add" class="text-center">
+            <button class="btn btn-danger" action-id="1">1</button>
+            <button class="btn btn-danger" action-id="2">2</button>
+            <button class="btn btn-danger" action-id="3">3</button>
+          </div>
+
+          <div id="phase2actions" class="actions"></div>
+        </div>
+        <div class="col phase" id="phase3">
+          <div class="lead text-center">Burst Phase 3 (1500ms)</div>
+          
+          <div id="phase3add" class="text-center">
+            <button class="btn btn-danger" action-id="1">1</button>
+            <button class="btn btn-danger" action-id="2">2</button>
+            <button class="btn btn-danger" action-id="3">3</button>
+          </div>
+
+          <div id="phase3actions" class="actions"></div>
+        </div>
+        <div class="col phase" id="phase4">
+          <div class="lead text-center">Burst Phase 4 (2000ms)</div>
+          
+          <div id="phase4add" class="text-center">
+            <button class="btn btn-danger" action-id="1">1</button>
+            <button class="btn btn-danger" action-id="2">2</button>
+            <button class="btn btn-danger" action-id="3">3</button>
+          </div>
+
+          <div id="phase4actions" class="actions"></div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
+  </body>
+</html>
